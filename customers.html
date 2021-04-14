@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Transactions</title>
+    <link rel="shortcut icon" href="hero-img.svg">
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="customer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar starts here  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">
+        <img  src="bitcoin_logo.svg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html"> HOME<span class="sr-only">(current)</span></a>
+            </li> &nbsp;
+            <li class="nav-item">
+              <a class="nav-link" href="./customers.html">Customers</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <div class="my-info text-center">
+        <h2>Hi, Aneesh</h2>
+        <h4>Your Bitcoins : <span id="myAccountBalance">500000</span> ₿</h4>
+
+        <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Bitcoins ₿</button>
+        <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">See All Transactions</a>
+    </div>
+
+    <!-- Modal send money -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send Bitcoins ₿</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Name: &nbsp; </span>
+                            </div>
+                            <input type="text" id="enterName" class="form-control" placeholder=" Enter Recipient's Name"
+                                aria-label="Recipient's Name" aria-describedby="basic-addon2">    
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">₿: &nbsp; </span>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                aria-label=" Enter Amount">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                        Money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol id="transaction-history-body">
+
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- table  -->
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr class="table-danger">
+                        <th scope="column1">Serial No</th>
+                        <th scope="column2">Name</th>
+                        <th scope="column3">Mail Address</th>
+                        <th scope="column4">BTC wallet (₿)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-light">
+                        <td scope="row">1</td>
+                        <td>Priyatham</td>
+                        <td>priyatham@gmail.com</td>
+                        <td>
+                            <p id="priyathamBitcoinBalance">645000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">2</td>
+                        <td>Kalyan</td>
+                        <td>kalyan@gmail.com</td>
+                        <td>
+                            <p id="kalyanBitcoinBalance">775000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">3</td>
+                        <td>Akshaya</td>
+                        <td>akshaya@gmail.com</td>
+                        <td>
+                            <p id="akshayaBitcoinBalance">998000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">4</td>
+                        <td>Tejaswini</td>
+                        <td>tejaswini@gmail.com</td>
+                        <td>
+                            <p id="tejaswiniBitcoinBalance">909000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">5</td>
+                        <td>Sunitha</td>
+                        <td>sunitha@gmail.com</td>
+                        <td>
+                            <p id="sunithaBitcoinBalance">800000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">6</td>
+                        <td>Vishal</td>
+                        <td>vishal@gmail.com</td>
+                        <td>
+                            <p id="vishalBitcoinBalance">500000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td>7</td>
+                        <td>Dheeraj</td>
+                        <td>dheeraj@gmail.com</td>
+                        <td>
+                            <p id="dheerajBitcoinBalance">560000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td>8</td>
+                        <td>Manish</td>
+                        <td>manish@gmail.com</td>
+                        <td>
+                            <p id="manishBitcoinBalance">750000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td>9</td>
+                        <td>Srinivas</td>
+                        <td>srinivas@gmail.com</td>
+                        <td>
+                            <p id="srinivasBitcoinBalance">950000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td>10</td>
+                        <td>Tulasi</td>
+                        <td>tulasi@gmail.com</td>
+                        <td>
+                            <p id="tulasiBitcoinBalance">880000</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--Footer starts here-->
+    <div class="foot">
+        <div class="container">
+            <div class="text">
+              <span class="title">Support through Bitcoin:</span> 
+              <a class="donate-btn" onclick="donate()" ><b>Donate</b></a>
+              Bitcoin Bank Project By - © <a href="https://aneeshpavan.github.io/" target="_blank">Aneesh Prodduturu</a>
+            </div>
+        </div>
+      </div>
+      <!--Footer ends here-->
+</body>
+</html>
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>

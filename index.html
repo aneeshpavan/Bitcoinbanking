@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Bank</title>
+    <link rel="shortcut icon" href="hero-img.svg">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+</head>
+<body onload="loader()">
+
+  <!-- loader for splash screen -->
+  <div id="loading"></div>
+
+    <!-- navbar starts here  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">
+        <img  src="bitcoin_logo.svg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html"> HOME<span class="sr-only">(current)</span></a>
+            </li> &nbsp;
+            <li class="nav-item">
+              <a class="nav-link" href="./customers.html">Customers</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <!-- here content starts here -->
+    <div class="container-fluid hero-content">
+      <div class="row align-items-center">
+        <div class="col-md-6 col-sm-12 text-center" data-aos="fade-up">
+          <h5>Welcome to</h5>
+          <h1><img style="width:6%; margin-top: -6px; padding:3px;" src="hero-img.svg"> Bitcoin Bank <img style="width:6%; margin-top: -6px; padding:3px;" src="hero-img.svg"></h1>
+          <p>Bitcoin - Open source P2P Money</p>
+          <br><br>
+          <a class="get-started" href="./customers.html">Transfer Bitcoins</a>
+        </div>
+        <div class="col-md-6 col-sm-12 text-center" data-aos="fade-right">
+          <div class="hero-img-div">
+            <img class="hero-img" src="https://bitcoin.org/img/home/bitcoin-img.svg?1616555510" alt="img-showing-money-transfer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- here content ends here -->
+
+    <!--Footer starts here-->
+    <div class="foot">
+      <div class="container">
+          <div class="text">
+            <span class="title">Support through Bitcoin:</span> 
+            <a class="donate-btn" onclick="donate()" ><b>Donate</b></a>
+            Bitcoin Bank Project By - © <a href="https://aneeshpavan.github.io/" target="_blank">Aneesh Prodduturu</a>
+          </div>
+      </div>
+    </div>
+    <!--Footer ends here-->
+</body>
+</html>
+<!-- splash screen js -->
+<script>
+  var preloader = document.getElementById("loading");
+  function loader(){
+    preloader.style.display = 'none';
+  }
+</script>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+<!-- aos data  -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 700,
+  });
+</script>
+
