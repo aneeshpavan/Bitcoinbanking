@@ -25,8 +25,5 @@ function sendMoney(){
 }
 
 function donate(){
-   var person = alert("Thank you for your kind gesture. You are a true treasure to me :)");
+   var person = alert("Thank you for your kind gesture. You are a true treasure to me :) or you can just do it : bc1qhjqqeanujzl7wva3kv2t0wqa0dde84t97tmuhn");
 }
-
-
-
