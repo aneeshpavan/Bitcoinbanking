@@ -11,3 +11,10 @@ A web application used to transfer virtual money (Bitcoins ₿) between users an
  Transfer History of all the transactions.
 
 Flow : Home Page > Get Started with Bitcoin > Send Bitcoins (₿) > Enter customer Name and Number of Bitcoins (₿) > Bitcoins Sent (Alert) > See all Transactions (Transaction History)
+
+
+<h3 align="right">
+![Profile View Counter](https://komarev.com/ghpvc/?username=aneeshpavan&label=PROFILE+VIEWS&style=for-the-badge)
+
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=aneeshpavan&show_icons=true) 
+</h3>
