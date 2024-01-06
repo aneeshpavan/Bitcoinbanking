@@ -262,3 +262,67 @@ tbody tr:hover {
    }
 }
 /* Table ends here*/
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    margin: 0 10px;
+    background-color: #F7931A;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pagination button:hover {
+    background-color: #F7931A;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: default;
+}
+
+.pagination span {
+    font-size: 16px;
+    margin: 0 10px;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    padding: 10px;
+    margin-right: 10px;
+    width: 320px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background-color: #F7931A;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px; /* Add a little space between buttons */
+}
+
+.search-container button:hover {
+    background-color: #F7931A;
+}

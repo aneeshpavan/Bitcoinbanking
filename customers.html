@@ -37,41 +37,52 @@
     <!-- navbar ends here  -->
 
     <div class="my-info text-center">
-        <h2>Hi, Aneesh</h2>
-        <h4>Your Bitcoins : <span id="myAccountBalance">500000</span> ₿</h4>
+        <h2>Welcome</h2>
+        <h4>Bitcoin Balance : <span id="myAccountBalance">50</span> ₿</h4>
 
         <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Bitcoins ₿</button>
         <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">See All Transactions</a>
     </div>
-
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search by name, serial number, or email...">
+        <button onclick="searchCustomers()">Search</button>
+        <button onclick="resetSearch()">Reset</button> <!-- Reset button -->
+    </div>    
     <!-- Modal send money -->
     <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Send Bitcoins ₿</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Sending ₿</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form action="">
+                        <p>Enter either the recipient's name or serial number:</p> <!-- Added explanatory text -->
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Name: &nbsp; </span>
                             </div>
-                            <input type="text" id="enterName" class="form-control" placeholder=" Enter Recipient's Name (Case Sensitive)"
-                                aria-label="Recipient's Name" aria-describedby="basic-addon2">    
+                            <input type="text" id="enterName" class="form-control" placeholder="Enter Recipient's Name (Case Sensitive)"
+                                aria-label="Recipient's Name" aria-describedby="basic-addon2">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Serial No: &nbsp; </span>
+                            </div>
+                            <input type="text" id="enterSerialNumber" class="form-control" placeholder="Enter Serial Number (Optional)" 
+                                aria-label="Serial Number">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">₿: &nbsp; </span>
                             </div>
-                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
-                                aria-label=" Enter Amount">
+                            <input type="text" id="enterAmount" class="form-control" placeholder="Enter Amount"
+                                aria-label="Enter Amount">
                         </div>
-
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -105,8 +116,11 @@
             </div>
         </div>
     </div>
-
-    <!-- table  -->
+    <div class="pagination">
+        <button onclick="changePage(currentPage - 1)">Back</button>
+        <span>Page <span id="currentPageNum">1</span> of <span id="totalPagesNum"></span></span>
+        <button onclick="changePage(currentPage + 1)">Next</button>
+    </div>       
     <div class="container">
         <div class="table-responsive">
             <table class="table table-hover table-bordered">
@@ -119,86 +133,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table-light">
-                        <td scope="row">1</td>
-                        <td>priyatham</td>
-                        <td>priyatham@mail.com</td>
-                        <td>
-                            <p id="priyathamBitcoinBalance">645000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-info">
-                        <td scope="row">2</td>
-                        <td>kalyan</td>
-                        <td>kalyan@mail.com</td>
-                        <td>
-                            <p id="kalyanBitcoinBalance">775000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-light">
-                        <td scope="row">3</td>
-                        <td>akshaya</td>
-                        <td>akshaya@mail.com</td>
-                        <td>
-                            <p id="akshayaBitcoinBalance">998000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-info">
-                        <td scope="row">4</td>
-                        <td>tejaswini</td>
-                        <td>tejaswini@mail.com</td>
-                        <td>
-                            <p id="tejaswiniBitcoinBalance">909000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-light">
-                        <td scope="row">5</td>
-                        <td>sunitha</td>
-                        <td>sunitha@mail.com</td>
-                        <td>
-                            <p id="sunithaBitcoinBalance">800000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-info">
-                        <td scope="row">6</td>
-                        <td>vishal</td>
-                        <td>vishal@mail.com</td>
-                        <td>
-                            <p id="vishalBitcoinBalance">500000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-light">
-                        <td>7</td>
-                        <td>dheeraj</td>
-                        <td>dheeraj@mail.com</td>
-                        <td>
-                            <p id="dheerajBitcoinBalance">560000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-info">
-                        <td>8</td>
-                        <td>manish</td>
-                        <td>manish@mail.com</td>
-                        <td>
-                            <p id="manishBitcoinBalance">750000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-light">
-                        <td>9</td>
-                        <td>srinivas</td>
-                        <td>srinivas@mail.com</td>
-                        <td>
-                            <p id="srinivasBitcoinBalance">950000</p>
-                        </td>
-                    </tr>
-                    <tr class="table-info">
-                        <td>10</td>
-                        <td>tulasi</td>
-                        <td>tulasi@mail.com</td>
-                        <td>
-                            <p id="tulasiBitcoinBalance">880000</p>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>
